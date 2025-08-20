@@ -38,7 +38,7 @@ $rowAbouts = mysqli_fetch_all($queryAbouts, MYSQLI_ASSOC);
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-    <?php include 'inc2/css.php' ?>
+  <?php include 'inc2/css.php' ?>
   <!-- =======================================================
   * Template Name: iPortfolio
   * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
@@ -54,6 +54,17 @@ $rowAbouts = mysqli_fetch_all($queryAbouts, MYSQLI_ASSOC);
   <?php include 'inc2/header.php' ?>
 
   <main class="main">
+    <?php
+    if (isset($_GET['page'])) {
+      if (file_exists('content/' . $_GET['page'] . ".php")) {
+        include 'content/' . $_GET['page'] . '.php';
+      } else {
+        include 'content/notfound.php';
+      }
+    } else {
+      include 'content/home.php';
+    }
+    ?>
 
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
@@ -68,31 +79,28 @@ $rowAbouts = mysqli_fetch_all($queryAbouts, MYSQLI_ASSOC);
     </section><!-- /Hero Section -->
 
     <!-- About Section -->
-    <?php include 'inc2/about.php' ?>
+
     <!-- /About Section -->
 
 
     <!-- Resume Section -->
-    <?php include 'inc2/resume.php' ?>
+
     <!-- /Resume Section -->
 
     <!-- Portfolio Section -->
-    <?php include 'inc2/portofolio.php' ?>
+
     <!-- /Portfolio Section -->
 
-    <!-- Services Section -->
-    
-    <!-- /Services Section -->
 
-    
+
 
     <!-- Contact Section -->
-    <?php include 'inc2/contact.php' ?>
+
     <!-- /Contact Section -->
 
   </main>
 
- <!-- footer -->
+  <!-- footer -->
   <?php include 'inc2/footer.php' ?>
 
   <!-- Scroll Top -->
