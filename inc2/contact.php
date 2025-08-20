@@ -3,12 +3,11 @@ $query = mysqli_query($koneksi, "SELECT * FROM contact ORDER BY id DESC");
 $rows  = mysqli_fetch_all($query, MYSQLI_ASSOC);
 ?>
 <section id="contact" class="contact section">
-  
+<?php foreach ($rowContacts as $key => $rowContact): ?>
   <!-- Section Title -->
-  <?php foreach ($rowContact as $key => $rowKontak):  ?>
   <div class="container section-title" data-aos="fade-up">
       <h2>Contact</h2>
-      <p><?php echo $rowKontak['content']; ?></p>
+      <p><?php echo $rowContact['content']; ?></p>
       
     </div><!-- End Section Title -->
 
@@ -24,7 +23,7 @@ $rows  = mysqli_fetch_all($query, MYSQLI_ASSOC);
               <div>
                 <h3>Address</h3>
                 
-                <p><?php echo $rowKontak['lokasi']; ?></p>
+                <p><?php echo $rowContact['lokasi']; ?></p>
                 
               </div>
             </div><!-- End Info Item -->
@@ -41,7 +40,7 @@ $rows  = mysqli_fetch_all($query, MYSQLI_ASSOC);
               <i class="bi bi-envelope flex-shrink-0"></i>
               <div>
                 <h3>Email Us</h3>
-                <p><?php echo $rowKontak['email']; ?></p>
+                <p><?php echo $rowContact['email']; ?></p>
 
               </div>
             </div><!-- End Info Item -->

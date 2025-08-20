@@ -1,4 +1,6 @@
+<?php 
 
+?>
 <section id="services" class="services section">
 
       <!-- Section Title -->

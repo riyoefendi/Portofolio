@@ -43,11 +43,13 @@ $rows = mysqli_fetch_all($query, MYSQLI_ASSOC);
                                     <td><?php echo $row['pengalaman']; ?></td>
                                     <td><?php echo $row['tahun_pengalaman']; ?></td>
                                     <td><?php echo $row['lokasi_kerja']; ?></td>
-                                    <td><?php echo $row['birthday']; ?></td>
                                     <td id="#summernote"><?php echo $row['jobdesk']; ?></td>
                                     <td>
-                                        <a href="?page=tambah-resume&edit=<?php echo $row['id'] ?>" class="btn btn-sm btn-primary">Edit</a>
-                                        <a onclick="return confirm('Apakah anda yakin akan menghapus data ini?')" href="?page=tambah-resume&delete=<?php echo $row['id'] ?>" class="btn btn-sm btn-danger">Delete</a>
+                                        <a href="?page=tambah-resume&edit=<?php echo $row['id'] ?>"
+                                            class="btn btn-sm btn-primary">Edit</a>
+                                        <a onclick="return confirm('Apakah anda yakin akan menghapus data ini?')"
+                                            href="?page=tambah-resume&delete=<?php echo $row['id'] ?>"
+                                            class="btn btn-sm btn-danger">Delete</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -58,4 +60,4 @@ $rows = mysqli_fetch_all($query, MYSQLI_ASSOC);
 
         </div>
     </div>
-</section>
+</section>  

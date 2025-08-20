@@ -1,4 +1,7 @@
-
+<?php 
+$queryResumes = mysqli_query($koneksi, "SELECT * FROM resume ORDER BY id DESC");
+$rowResumes = mysqli_fetch_all($queryResumes, MYSQLI_ASSOC);
+?>
 <section id="resume" class="resume section">
 
       <!-- Section Title -->

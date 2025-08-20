@@ -25,8 +25,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="?page=client">
-                        <i class="bi bi-circle"></i><span>Clients</span>
+                    <a href="?page=contact">
+                        <i class="bi bi-circle"></i><span>Contact</span>
                     </a>
                 </li>
                 <li>
