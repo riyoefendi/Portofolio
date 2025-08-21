@@ -23,6 +23,7 @@ $rows = mysqli_fetch_all($query, MYSQLI_ASSOC);
                                 <th>No</th>
                                 <th>Content</th>
                                 <th>Lokasi</th>
+                                <th>Phone</th>
                                 <th>Email</th>
                                 <th></th>
                             </tr>
@@ -33,6 +34,7 @@ $rows = mysqli_fetch_all($query, MYSQLI_ASSOC);
                                     <td><?php echo $key + 1 ?></td>
                                     <td><?php echo $row['content']; ?></td>
                                     <td><?php echo $row['lokasi']; ?></td>
+                                    <td><?php echo $row['phone']; ?></td>
                                     <td><?php echo $row['email']; ?></td>
                                     <td>
                                         <a href="?page=tambah-contact&edit=<?php echo $row['id'] ?>" class="btn btn-sm btn-primary">Edit</a>

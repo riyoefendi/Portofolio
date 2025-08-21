@@ -20,17 +20,18 @@ if (isset($_POST['simpan'])) {
     $content = $_POST['content'];
     $lokasi  = $_POST['lokasi'];
     $email   = $_POST['email'];
+    $phone   = $_POST['phone'];
 
     if ($id) {
         // UPDATE
-        $update = mysqli_query($koneksi, "UPDATE contact SET content = '$content', lokasi = '$lokasi', email = '$email' WHERE id = '$id'");
+        $update = mysqli_query($koneksi, "UPDATE contact SET content = '$content', lokasi = '$lokasi', email = '$email', phone = '$phone' WHERE id = '$id'");
         if ($update) {
             header("location:?page=contact&ubah=berhasil");
             exit;
         }
     } else {
         // INSERT
-        $insert = mysqli_query($koneksi, "INSERT INTO contact (content, lokasi, email) VALUES ('$content','$lokasi','$email')");
+        $insert = mysqli_query($koneksi, "INSERT INTO contact (content, lokasi, email, phone) VALUES ('$content','$lokasi','$email','$phone')");
         if ($insert) {
             header("location:?page=contact&tambah=berhasil");
             exit;
@@ -63,6 +64,10 @@ if (isset($_POST['simpan'])) {
                         <div class="mb-3">
                             <label class="form-label">Email</label>
                             <input type="email" class="form-control" name="email" placeholder="Email Anda" value="<?php echo ($id) ? $rowEdit['email'] : '' ?>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Phone</label>
+                            <input type="number" class="form-control" name="phone" placeholder="Phone Anda" value="<?php echo ($id) ? $rowEdit['phone'] : '' ?>" required>
                         </div>
                         <div class="mb-3">
                             <button class="btn btn-primary" type="submit" name="simpan">Simpan</button>
