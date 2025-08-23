@@ -30,18 +30,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="?page=blog">
-                        <i class="bi bi-circle"></i><span>Blog</span>
-                    </a>
-                </li>
-                <li>
                     <a href="?page=category">
                         <i class="bi bi-circle"></i><span>Category</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="?page=card-content">
-                        <i class="bi bi-circle"></i><span>card</span>
                     </a>
                 </li>
                 <li>
@@ -54,6 +44,16 @@
                         <i class="bi bi-circle"></i><span>Category</span>
                     </a>
                 </li>
+                <li>
+                    <a href="?page=skill">
+                        <i class="bi bi-circle"></i><span>Skill</span>
+                    </a>
+                </li>
+                <!-- <li>
+                    <a href="?page=card-content">
+                        <i class="bi bi-circle"></i><span>card</span>
+                    </a>
+                </li> -->
             </ul>
         </li><!-- End Components Nav --><!-- End Blank Page Nav -->
 

@@ -3,8 +3,9 @@
 $queryCategories = mysqli_query($koneksi, "SELECT * FROM categories ORDER BY id DESC");
 $rowCategories = mysqli_fetch_all($queryCategories, MYSQLI_ASSOC);
 
-$query = mysqli_query($koneksi, "SELECT categories.name, portofolios.* FROM portofolios 
-JOIN categories ON categories.id = portofolios.id_category 
+$query = mysqli_query($koneksi, "SELECT categories.name, portofolios.* 
+FROM portofolios 
+LEFT JOIN categories ON categories.id = portofolios.id_category 
 ORDER BY portofolios.id DESC");
 
 $rows = mysqli_fetch_all($query, MYSQLI_ASSOC);

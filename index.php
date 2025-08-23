@@ -5,8 +5,13 @@ include 'admin/koneksi.php';
 $queryAbouts = mysqli_query($koneksi, "SELECT * FROM about ORDER BY id DESC");
 $rowAbouts = mysqli_fetch_all($queryAbouts, MYSQLI_ASSOC);
 
+// contact
 $queryContacts = mysqli_query($koneksi, "SELECT * FROM contact ORDER BY id DESC");
 $rowContacts = mysqli_fetch_all($queryContacts, MYSQLI_ASSOC);
+
+// skill
+$querySkills = mysqli_query($koneksi, "SELECT * FROM skill ORDER BY id DESC");
+$rowSkills = mysqli_fetch_all($querySkills, MYSQLI_ASSOC);
 
 // $queryBlogs = mysqli_query($koneksi, "SELECT * FROM blogs WHERE is_active ORDER BY id DESC");
 $queryPortofolios = mysqli_query($koneksi, "SELECT categories.name, portofolios.* FROM portofolios 
@@ -22,14 +27,15 @@ $rowPortofolios = mysqli_fetch_all($queryPortofolios, MYSQLI_ASSOC);
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Index - iPortfolio Bootstrap Template</title>
+  <title>Index - Riyo Efendi</title>
   <meta content="" name="description" />
   <meta content="" name="keywords" />
 
   <!-- Favicons -->
   <link href="assets1/assets/img/favicon.png" rel="icon" />
-  <link href="assets1/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
-
+  <?php foreach ($rowAbouts as $key => $rowAbout): ?>
+  <link href="admin/uploads/<?php echo $rowAbout['image']; ?> " rel="apple-touch-icon" />
+    <?php endforeach ?>
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
@@ -76,7 +82,7 @@ $rowPortofolios = mysqli_fetch_all($queryPortofolios, MYSQLI_ASSOC);
         include 'content/notfound.php';
       }
     } else {
-      include 'content/home.php';
+      include 'content/hero.php';
     }
     ?>
   </main>

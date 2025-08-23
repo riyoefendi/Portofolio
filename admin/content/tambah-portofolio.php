@@ -76,7 +76,7 @@ if (isset($_POST['simpan'])) {
         }
     } else {
         $insert_query = "INSERT INTO portofolios (id_category, nama_project, link, description, image) 
-                     VALUES ($id_category, '$nama_project', '$link', '$description', '$image_name')";
+                     VALUES ('$id_category', '$nama_project', '$link', '$description', '$image_name')";
         $insert = mysqli_query($koneksi, $insert_query);
         if ($insert) {
             header("location:?page=portofolio&tambah=berhasil");
@@ -87,8 +87,7 @@ if (isset($_POST['simpan'])) {
 $queryCategories = mysqli_query($koneksi, "SELECT * FROM categories ORDER BY id DESC");
 $rowCategories = mysqli_fetch_all($queryCategories, MYSQLI_ASSOC);
 
-$queryPortofolios = mysqli_query($koneksi, "SELECT categories.name, portofolios.* FROM portofolios 
-JOIN categories ON categories.id = portofolios.id_category 
+$queryPortofolios = mysqli_query($koneksi, "SELECT categories.name, portofolios.* FROM portofolios JOIN categories ON categories.id = portofolios.id_category 
 ORDER BY portofolios.id DESC");
 $rowPortofolios = mysqli_fetch_assoc($queryPortofolios);
 

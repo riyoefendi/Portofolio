@@ -13,13 +13,11 @@ $rowCategories = mysqli_fetch_all($queryCategories, MYSQLI_ASSOC);
 <section id="portfolio" class="portfolio section light-background">
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
+    <?php foreach ($rowAbouts as $key => $rowAbout): ?>
+    </php>
         <h2>Portfolio</h2>
-        <p>
-            Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
-            aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
-            quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-            fugiat sit in iste officiis commodi quidem hic quas.
-        </p>
+        <p><?php echo $rowAbout['content'] ?></p>
+        <?php endforeach ?>
     </div>
     <!-- End Section Title -->
 

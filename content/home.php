@@ -1,9 +1,10 @@
 <!-- Hero Section -->
 <section id="hero" class="hero section dark-background">
-    <img src="assets1/assets/img/hero-bg.jpg" alt="" data-aos="fade-in" class="" />
-
+    <?php foreach ($rowAbouts as $key => $rowAbout): ?>
+        <img src="admin/uploads/<?php echo $rowAbout['image']; ?> " alt="" data-aos="fade-in" class="" />
+    <?php endforeach ?>
     <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h2>Alex Smith</h2>
+        <h2>Riyo Efendi</h2>
         <p>
             I'm
             <span
