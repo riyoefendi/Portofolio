@@ -20,11 +20,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="?page=resume">
-                        <i class="bi bi-circle"></i><span>Resume</span>
-                    </a>
-                </li>
-                <li>
                     <a href="?page=contact">
                         <i class="bi bi-circle"></i><span>Contact</span>
                     </a>
